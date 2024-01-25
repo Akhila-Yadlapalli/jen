@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                // Add your build commands here
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project...'
+                // Add your deployment commands here
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Pipeline succeeded. Notify stakeholders.'
+        }
+        failure {
+            echo 'Pipeline failed. Notify team for investigation.'
+        }
+    }
+}
